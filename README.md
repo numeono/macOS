@@ -50,13 +50,18 @@ the Dock**. Then run:
 ```bash
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 1000
+defaults write com.apple.dock no-bouncing -bool true
 killall Dock
 ```
+
+The `no-bouncing` setting stops app icons from bouncing in the hidden Dock when
+an app launches or requests attention.
 
 To restore the normal hidden-Dock behavior:
 
 ```bash
 defaults delete com.apple.dock autohide-delay
+defaults delete com.apple.dock no-bouncing
 killall Dock
 ```
 
