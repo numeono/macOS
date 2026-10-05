@@ -1,4 +1,4 @@
-# macOS
+# macOS Setup
 
 An opinionated guide to setting up an excellent Mac: fast, calm, secure, and
 pleasant to use every day.
