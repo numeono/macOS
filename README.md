@@ -36,6 +36,34 @@ The detailed guide is being written. It will distinguish between:
 - **Optional** — useful for a particular workflow or preference
 - **Advanced** — powerful, but worth understanding before enabling
 
+### Disable the Dock
+
+If you launch apps with Spotlight or another keyboard-first launcher, the Dock
+can become mostly wasted space. macOS does not offer an official “off” switch,
+but you can hide it and make its reveal delay long enough that it is effectively
+disabled. This preserves Mission Control, Spaces, and the other system features
+managed by the Dock process.
+
+First turn on **System Settings → Desktop & Dock → Automatically hide and show
+the Dock**. Then run:
+
+```bash
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 1000
+killall Dock
+```
+
+To restore the normal hidden-Dock behavior:
+
+```bash
+defaults delete com.apple.dock autohide-delay
+killall Dock
+```
+
+[Minimized Windows](https://github.com/numeono/minimized-windows) is especially
+useful with this setup because minimized windows remain accessible without the
+Dock.
+
 ## Related projects
 
 - [Minimized Windows](https://github.com/numeono/minimized-windows) — a small
